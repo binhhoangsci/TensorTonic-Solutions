@@ -8,6 +8,6 @@ def log_loss(y_true: list, y_pred: list, eps: float = 1e-15) -> list:
             y_pred[i] = eps
         elif y_pred[i] > 1 - eps:
             y_pred[i] = 1 - eps
-        loss.append(float(-(y_true[i] * math.log(y_pred[i]) + (1 - y_true[i]) * math.log(1 - y_pred[i]))))
+        loss.append(float(-(y_true[i] * log(y_pred[i]) + (1 - y_true[i]) * log(1 - y_pred[i]))))
 
     return loss
